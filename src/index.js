@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import PagNotas from './PagNotas';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <PagNotas />
   </React.StrictMode>,
   document.getElementById('root')
 );
