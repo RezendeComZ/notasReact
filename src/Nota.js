@@ -1,6 +1,5 @@
-const Nota = (props) => {
-  const filtro = props.filtro
-  const notas = props.notas.filter(nota => nota.pin == filtro)
+const Nota = ({ filtro, notas }) => {
+  notas = notas.filter(nota => nota.pin == filtro)
   return (
     <div className="notas">
       {notas.map((nota) =>
@@ -9,7 +8,7 @@ const Nota = (props) => {
           <div className="headPost">
             {nota.title}
           </div>
-          <div class="bodyPost">
+          <div class="bodyPost"   >
             {nota.body}
           </div>
         </div>
