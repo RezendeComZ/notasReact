@@ -1,6 +1,6 @@
 import Settings from "./settings";
 import "./stylesheets/style.css";
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Nota from './Nota'
 
 function PagNotas() {
@@ -16,6 +16,14 @@ function PagNotas() {
     const novasNotas = notas.filter(nota => nota.nota_id !== id)
     setNotas(novasNotas)
   }
+
+  useEffect(() => {
+    console.log("use effect rodado");
+    console.log(notas);
+  }, [])
+  // o array vazio [] faz com o ele só execute uma vez, ou colocando uma variável dentro,  só quando essa variável mudar
+
+
   return (
     <div className="App">
       <Settings />
