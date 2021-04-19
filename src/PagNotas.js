@@ -14,8 +14,10 @@ function PagNotas() {
   return (
     <div className="App">
       <Settings />
-      <Nota notas={notas} filtro={true} />
-      <Nota notas={notas} filtro={false} />
+      <div className="notas">
+        <Nota notas={notas} filtro={true} />
+        <Nota notas={notas} filtro={false} />
+      </div>
     </div>
   );
 }
