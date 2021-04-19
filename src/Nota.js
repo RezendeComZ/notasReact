@@ -1,5 +1,5 @@
-const Nota = ({ filtro, notas }) => {
-  notas = notas.filter(nota => nota.pin == filtro)
+const Nota = ({ filtro, notas, handleDelete }) => {
+  notas = notas.filter(nota => nota.pin === filtro)
   return (
     <div className="notas">
       {notas.map((nota) =>
@@ -11,6 +11,7 @@ const Nota = ({ filtro, notas }) => {
           <div class="bodyPost"   >
             {nota.body}
           </div>
+          <button onClick={() => handleDelete(nota.nota_id)}>X</button>
         </div>
       )
       )}
