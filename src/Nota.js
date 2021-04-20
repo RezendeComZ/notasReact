@@ -1,7 +1,7 @@
 const Nota = ({ filtro, notas, handleDelete }) => {
   notas = notas.filter(nota => nota.pin === filtro)
   return (
-    <div className="notas">
+    <>
       {notas.map((nota) =>
       (
         <div className={"postit pin" + nota.pin} id={nota.nota_id} key={nota.nota_id}>
@@ -15,7 +15,7 @@ const Nota = ({ filtro, notas, handleDelete }) => {
         </div>
       )
       )}
-    </div>
+    </>
   );
 }
 
