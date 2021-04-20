@@ -13,6 +13,8 @@ function PagNotas() {
     setNotas(novasNotas)
   }
 
+  const [isPending, setIsPeding] = useState(true)
+
   useEffect(() => {
     fetch('http://localhost:3030/api/allPosts/')
       .then(res => {
@@ -21,6 +23,7 @@ function PagNotas() {
       .then((data) => {
         // console.log(data)
         setNotas(data)
+        setIsPeding(false)
       })
   }, [])
   // o array vazio [] faz com o ele só execute uma vez, ou colocando uma variável dentro,  só quando essa variável mudar
@@ -29,6 +32,7 @@ function PagNotas() {
     <div className="App">
       <Settings />
       <div className="notas">
+        {isPending && <div>Loading...</div>}
         {notas && <Nota notas={notas} filtro={true} handleDelete={handleDelete} />}
         {notas && <Nota notas={notas} filtro={false} handleDelete={handleDelete} />}
       </div>
